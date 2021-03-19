@@ -130,7 +130,9 @@ elseif("$ENV{ROS_DISTRO}" STREQUAL "foxy")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DFOXY")
   set(SOURCES "${SOURCES}" src/ros_param_backend_foxy.cpp)
 else()
-  message(FATAL_ERROR "Unsupported ROS Distribution: " "$ENV{ROS_DISTRO}")
+    message(STATUS "Build for ROS2 rolling")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DFOXY")
+    set(SOURCES "${SOURCES}" src/ros_param_backend_foxy.cpp)
 endif()
 
 
