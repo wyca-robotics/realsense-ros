@@ -252,7 +252,7 @@ bool BaseRealSenseNode::toggleSensors(bool enabled, std::string& msg)
         catch(const rs2::wrong_api_call_sequence_error& e)
         {
             msg = "Device is already ON.";
-            ROS_WARN(msg);
+            ROS_WARN_STREAM(msg);
             return false;
         }
     }
@@ -274,7 +274,7 @@ bool BaseRealSenseNode::toggleSensors(bool enabled, std::string& msg)
             catch(const rs2::wrong_api_call_sequence_error& e)
             {
                 msg = "Device is already OFF.";
-                ROS_WARN(msg);
+                ROS_WARN_STREAM(msg);
                 return false;
             }
         }
